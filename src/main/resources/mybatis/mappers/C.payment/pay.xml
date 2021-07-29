@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.pay">
+<!-- 결과값 반환 자료형 정의 -->	
+	<resultMap id="payVO" type="PayVO">
+	   <result property="employee_number" column="EMPLNUMB" />
+	   <result property="korea_name" column="KORENAME" />
+	   <result property="retire_date" column="RETRDATE" />
+	</resultMap>
+
+
+	<select id="getPayYearList" resultType="String"   >
+        <![CDATA[
+			SELECT DISTINCT(SUBSTR(PAYMONTH , 0 , 4)) PAYYEAR 
+		      FROM TXXXPAYHD
+		     ORDER BY PAYYEAR DESC
+	    ]]>
+	</select>	
+
+
+
+	<select id="getPayMonthList" parameterType="string" resultType="Map"   >
+        <![CDATA[
+			SELECT PAYMONTH , 
+				   TO_CHAR(COUNT(EMPLNUMB)) COUNT , 
+				   TO_CHAR(SUM(ATOTAMNT)) ATOTAMNT , 
+				   TO_CHAR(SUM(DTOTAMNT)) DTOTAMNT ,  
+				   TO_CHAR(SUM(RTOTAMNT)) RTOTAMNT
+			  FROM TXXXPAYHD
+			 WHERE PAYMONTH LIKE '%'||#{payYear}||'%' 
+			 GROUP BY PAYMONTH
+             ORDER BY PAYMONTH
+	    ]]>
+	</select>	
+
+
+	<select id="getPayDetailList" parameterType="string" resultMap="payVO"   >
+        <![CDATA[
+			SELECT  EMPLNUMB , KORENAME , NVL(RETRDATE , ' ') RETRDATE
+			  FROM TXXXPAYHD
+			 WHERE PAYMONTH = #{payYearMonth}
+	    ]]>
+	</select>
+	
+
+	<select id="getEmployeeInfo" parameterType="java.util.HashMap" resultType="map"   >
+        <![CDATA[
+				    SELECT A.EMPLNUMB , -- 사번 
+				           A.KORENAME , -- 성명 
+				           A.BIRTHDAY , -- 생일
+				           A.EMPLDATE , -- 입사일
+				           A.RETRDATE , -- 퇴사일
+				           B.DEPTNAME DEPTCODE , -- 소속
+				           C.CODECONT JIGWICOD , -- 직위
+				           D.CODECONT JIGCHAEG , -- 직책
+				           E.CODECONT JIGGEUBC , -- 직급
+				           HOBONGCD   -- 호봉
+				      FROM HREMPLMT A
+				      LEFT OUTER JOIN HRDEPTCD B
+				        ON B.DEPTCODE = A.DEPTCODE
+				       AND #{payYearMonth} BETWEEN B.STATDATE AND B.ENDDDATE
+				      LEFT OUTER JOIN HRBASECD C
+				        ON C.CODEKEY1 = '29'
+				       AND C.CODEKEY2 = A.JIGWICOD
+				      LEFT OUTER JOIN HRBASECD D
+				        ON D.CODEKEY1 = '35'
+				       AND D.CODEKEY2 = A.JIGCHAEG
+				      LEFT OUTER JOIN HRBASECD E
+				        ON E.CODEKEY1 = '51'
+				       AND E.CODEKEY2 = A.JIGGEUBC
+				     WHERE EMPLNUMB = #{employee}
+	    ]]>
+	</select>
+	
+	
+	<select id="getPayDetail" parameterType="java.util.HashMap" resultType="map"   >
+       <![CDATA[
+			SELECT A.PAYMONTH  , A.EMPLNUMB , A.GDGUBNCD , A.FTGDCODE , A.PROCAMNT ,
+			       NVL(B.CODECONT  , C.CODECONT) CODECONT   
+			  FROM TXXXPAYBD A
+			  LEFT OUTER JOIN HRBASECD B
+			    ON B.CODEKEY1 = '53'
+			   AND B.CODEKEY2 = A.FTGDCODE
+			  LEFT OUTER JOIN HRBASECD C
+			    ON C.CODEKEY1 = '54'
+			   AND C.CODEKEY2 = A.FTGDCODE
+			 WHERE EMPLNUMB = #{employee}
+			   AND PAYMONTH = #{payYearMonth}
+			 ORDER BY GDGUBNCD DESC , FTGDCODE
+	    ]]>
+	</select>
+	
+ 
+	
+	
+	<!-- 
+		<select id="getPayDetailList" parameterType="string" resultType="PayVO"   >
+        <![CDATA[
+			SELECT PAYMONTH , EMPLNUMB , KORENAME , WORKAREA , DEPTCODE ,
+				   JIGJONGC , JIGWICOD , JIGCHAEG , JIGGEUBC , HOBONGCD ,
+				   BASEDATE , RETRDATE , PAYRDATE , CRETDATE , CRETSABN , 
+				   UPTEDATE , UPTESABN ,				   
+				   TO_CHAR(HOURWAGE) HOURWAGE , TO_CHAR(ATOTAMNT) ATOTAMNT , 
+				   TO_CHAR(DTOTAMNT) DTOTAMNT , TO_CHAR(BASEDEDT) BASEDEDT , 
+				   TO_CHAR(BASETAXA) BASETAXA , TO_CHAR(CALCTAXA) CALCTAXA , 
+				   TO_CHAR(TAXADEDT) TAXADEDT , TO_CHAR(TAXATOTL) TAXATOTL , 
+				   TO_CHAR(NONTTOTL) NONTTOTL , TO_CHAR(RTOTAMNT) RTOTAMNT
+			  FROM TXXXXPAY
+			 WHERE PAYMONTH = #{payYearMonth}
+	    ]]>
+	</select>
+	 -->
+	
+	
+
+	
+	
+</mapper>

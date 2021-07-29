@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.main">
+<!-- 리절트 맵 정의 -->	
+	<resultMap id="menuListResult" type="PgInfoVO">
+	   <result property="programCode" column="PROCODE" />
+	   <result property="programName" column="PRONAME" />
+	   <result property="programURL" column="PROURL" />
+	   <result property="programLevel" column="PRO_LEVEL" />
+	   <result property="parentId" column="PARENT_ID" />
+	   <result property="isProgram" column="IS_PROGRAM" />
+	</resultMap>
+
+<!-- select -->	
+      <select id="selectMenuList" resultMap="menuListResult"   >
+        <![CDATA[
+			SELECT *
+			FROM TXXXPAYPROC
+			ORDER BY PRO_LEVEL DESC , PROCODE
+	    ]]>
+	</select>
+</mapper>
+
+
+<!-- 
+	문자열로 검색하는 쿼리
+		SELECT *
+		FROM HRPROTES
+		WHERE PROCODE LIKE '%'||#{PROCODE}||'%'
+ -->

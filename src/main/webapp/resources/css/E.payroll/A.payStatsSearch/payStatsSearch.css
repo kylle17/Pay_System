@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+	#content {
+		width:100%;
+		height:100%;
+		float:none;
+	}
+	
+	#procHeader {
+		width:100%;
+		height:50px;
+		float:none;
+	}
+	
+	#procHeader > form {
+		width:100%;
+		float:none;
+	}
+	
+	#searchData{
+		width:70%;
+		float:left;
+	}
+	
+	#button {
+		width:30%;
+		float: right;
+	}
+	
+	#procContent {
+		width:100%;
+		float:none;
+	}
+	
+	.ui-jqgrid {
+		float:left;
+	}	
+	
+	/* jqgrid폰트 조절 */
+	/* jquer ui에서 jqgrid의 폰트에 간섭을 해서 	강제로 간섭하는 부분의 크기를 줄이는 css삽입*/
+	.ui-widget .ui-widget {
+		font-size:12px;
+	}
+	
+	
+	input {
+		width:70px;
+	}
+
+	
+

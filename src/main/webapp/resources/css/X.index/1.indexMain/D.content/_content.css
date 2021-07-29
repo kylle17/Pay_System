@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+        main {
+            padding:10px;
+            flex-grow: 1;
+            flex-shrink: 1;   
+            float:none;      
+        }
+        
+        
+        .ui-tabs-panel {
+        	width:100%;
+        	float:left;
+        }
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+
+
+<tiles-definitions>
+
+
+	<definition name="/payStatsSearch" template="/WEB-INF/views/A.program/E.payroll/A.payStatsSearch/payStatsSearchIndex.jsp">
+	</definition>
+
+
+	<definition name="/StandDataSearch" template="/WEB-INF/views/A.program/E.payroll/B.standDataSearch/standDataSearchIndex.jsp">
+	</definition>
+
+	
+	<definition name="/payrollProc" template="/WEB-INF/views/A.program/E.payroll/C.payrollProc/payrollProcIndex.jsp">
+	</definition>
+
+	
+	<definition name="/payrollResult" template="/WEB-INF/views/A.program/E.payroll/D.payrollResult/payrollResultIndex.jsp">
+	</definition>	
+
+
+</tiles-definitions>
+
+

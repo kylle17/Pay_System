@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+
+
+
+/*소제목*/
+.smallTitle{
+	border: 0.1rem solid #555;
+	color: white;
+	background-color: #64707F;
+	font-size: 15px;
+	padding: 5px 15px 5px 15px;
+	margin: 0px 0px 0px 0px; 
+}
+
+/*조회조건*/
+.condition{
+	height:35px;
+	border: 0.1rem solid #555;
+	color: black;
+	background-color: white;
+	font-size: 13px;
+	padding: 0px 0px 0px 0px;
+	margin: 2px 2px 2px 2px; 
+}
+
+
+/*tag design*/
+.select{
+	margin: 0px 5px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	height: 100%;
+	font-size: 16px;
+}

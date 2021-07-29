@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <typeAliases>
+
+    <!-- A.program -->
+    	
+    	<!-- A.humanResource -->    
+    	
+    	<!-- B.diligence -->    
+    	
+    	<!-- C.payment --> 
+    	<typeAlias type="com.myco.C.payment.A.pay.VO.PayVO" alias="PayVO" />      
+    	
+    	<!-- D.resignation -->
+    	
+    	<!-- E.payroll -->
+	    <typeAlias type="com.myco.E.payroll.A.payStatsSearch.VO.PayStatsSearchVO" alias="PayStatsSearchVO" />      
+	    <typeAlias type="com.myco.E.payroll.A.payStatsSearch.VO.PayStatsSearchMonthVO" alias="PayStatsSearchMonthVO" />      
+	    <typeAlias type="com.myco.E.payroll.A.payStatsSearch.VO.PayStatsSearchDetailVO" alias="PayStatsSearchDetailVO" />      
+	    <typeAlias type="com.myco.E.payroll.A.payStatsSearch.VO.PayStatsSearchSelectElementVO" alias="PayStatsSearchSelectElementVO" /> 
+    
+       	
+
+    			
+    <!-- X.index -->	
+    <typeAlias type="com.myco.X.main.VO.ProgramInfoVO" alias="PgInfoVO" />	
+    	    
+      
+  
+    
+  </typeAliases>
+</configuration>
+
+
+

@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Noto Sans KR4';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('Noto Sans Regular'), url('../fonts/notokr/NotoSans-Regular.eot');
+    src: url('../fonts/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NotoSans-Regular.woff2') format('woff2'),
+         url('../fonts/NotoSans-Regular.woff') format('woff');
+}
+/* 부트스트랩 관련 패치 */
+body{
+	background-color: #fff;
+}
+.swal2-container {
+	z-index: 999;
+}
+.swal2-popup {
+  font-size: 1.6rem !important;
+}
+
+/* 폰트 적용 */
+body,input,textarea,select,table,button,code{letter-spacing:0px; font-family:"Noto Sans KR4",Dotum,Helvetica,AppleGothic,Sans-serif; color: black;}
+
+/* 네비게이션 바 */
+.navbar{
+	font-size: 17px;	
+	margin-bottom: 0px;
+}
+.dropdown-menu>li>a{
+	font-size: 17px;	
+	display: block;
+    padding: 7px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* 프로그램 제목, 버튼모음 */
+.divTdTitle01{ position:relative; float:left; padding-top:10px; float:left; width:350px;}	
+.divTdTitle02{ position:relative; padding-top:10px; padding-right:10px;  text-align:right;margin: 0 0 0 350px;}	
+
+/*기본버튼*/
+.Btn_reset  {background-image:url(../img/sub/btn_01.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_save {  background-image:url(../img/sub/btn_02.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_search {background-image:url(../img/sub/btn_03.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_delete {background-image:url(../img/sub/btn_04.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_print { background-image:url(../img/sub/btn_05.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_excel { background-image:url(../img/sub/btn_06.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_close { background-image:url(../img/sub/btn_07.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+.Btn_add    {background-image:url(../img/sub/btn_08.png); background-repeat:no-repeat; width:50px; height:50px; border:0; cursor:pointer;display:; background-color: white; background-position: center; outline: none; }
+
+/*중제목부문*/
+.midTitle{position:relative; font-size:180%; font-weight: 900; border:0px solid #009999;}
+.midline{ border-bottom:1px solid #999; width:720px;}
+
+/*소제목부문*/
+.smallTitle{ padding:5px 0 5px 40px; margin: 7px 0 7px 0; font-size:20px; font-weight: bold; background: url("../img/sub/t_icon.png") no-repeat 7px 20%; background-size: 23.1px 32px;}
+.smallTitle2{padding:5px 0 5px 40px; margin: 7px 0 7px 0; font-size:20px; font-weight: bold; background: url("../img/sub/t_icon2.png") no-repeat 7px 50%; background-size: 23.2px 28.8px;}
+
+/*조회조건박스*/
+.searchResion1{ position:relative; margin-bottom:20px; border: 1px solid #dbdbdb; background-color: #F8F8F8;}
+.search_box{ width: 100%; display: table-cell; vertical-align: middle; }
+.search_label{padding: 0 15px 0 50px; text-align: left; font-size: 14px; font-weight: bold;}
+.search_inner_split{padding-top: 8px;}
+
+/* 등록박스 */
+.inputResion1{ position:relative; border-top: 2px solid #64707F; background-color: white; }
+.input_table{ margin: 0 0 5px 0; width: 100%; height: 100%; border-bottom: 1px solid #DCDCDC;}
+.input_table th, .input_table td{ padding: 8px 0 8px 0; border-bottom: 1px solid #DCDCDC;}
+.input_table th{padding-left: 10px; text-align: left; font-size: 14px; background-color: #F8F8F8;}
+.input_table td{text-align: left; padding-left: 20px;}
+
+/* 그리드 테이블 박스 */
+.grid_table{ width: 100%; border-bottom: 1px solid #DCDCDC;}
+.grid_table th, .input_table td{ padding: 8px 0 8px 0; border-bottom: 1px solid #DCDCDC;}
+.grid_table th{
+	height: 30px;
+	padding: 0 10px 0 10px; 
+	text-align: center; 
+	font-weight: 100;
+    font-size: 14px;
+	background-color: #64707F; color: white; border-style: solid;  border-width: 1px; border-color: #c7c7c7; 
+}
+.grid_table td{
+	border-style: solid;
+    border-width: 0px 1px 1px 0px;
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-color: #CCC;
+    color: #555;
+    height: 25px;
+    text-align: center;
+}
+
+.grid_table_bottom {
+	border-top-style: solid;
+	border-top-width: 1px;
+	background-color: #e5e5e5;
+	border-top-color: #ccc;
+	height: 47px;
+}
+/*인풋박스*/
+.input7  {
+	padding-left: 5px;
+	font-size: 13px;
+	color: #000000;
+	background: #fff;
+	border: 1px solid #DCDCDC;
+	text-align: left;
+	height: 25px;
+	font:normal 12px;
+}
+.input7r { 
+	padding-left: 5px;
+	font-size: 13px; 
+	color: #000000;
+	background: #F3F3F1; 
+	border: 1px solid #DCDCDC;
+	text-align: left;
+	height: 25px;
+}
+.input7r2 { 
+	padding-left: 5px;
+	font-size: 13px; 
+	color: #000000;
+	background: #F3F3F1; 
+	border: 1px solid #DCDCDC;
+	text-align: left;
+	height: 25px;
+	margin-left: -4px;
+}
+/* textarea */
+.area7  {
+	padding-left: 0px;
+	font-size: 13px;
+	color: #000000;
+	background: #fff;
+	border: 1px solid #DCDCDC;
+	text-align: left;
+	font:normal 12px;
+	width:98%; 
+	resize: none; 
+	height: 100%;
+}
+.area7r { 
+	padding-left: 0px;
+	font-size: 13px; 
+	color: #000000;
+	background: #F3F3F1; 
+	border: 1px solid #DCDCDC;
+	text-align: left;
+	width:98%; 
+	resize: none; 
+	height: 100%;
+}
+/* 라디오 버튼 */
+.radio_box input[type=radio]{
+	position: relative;
+	top: 2px;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+/* 체크박스 */
+.input_check{
+	transform: scale(1.5);
+	position: relative;
+	top: 2px;
+}
+
+/*공통코드 버튼*/
+.codmst_button  {
+    padding: 5px 10px;
+    font-size: 5px;
+    line-height: 1.1;
+    margin-left: -5px;
+    top: -2px;
+    position: relative;
+}
+
+/* 그리드 셀속의 삭제 버튼 */
+.grid_del_btn{
+	width:100%; 
+	height:100%; 
+	line-height: 0px; 
+	border-radius: 0px;
+	background-color: #ff675c;
+	color: #FFF;
+}
+/* 부트스트랩 애드온 박스 */
+.input-group {
+}
+.input-group-addon {
+	padding: 3px 7px;
+}
+.input-group-addon, .input-group-btn{
+	width : 0%;
+}
+
+/*입력폼필드*/
+.input1 { font-size: 12px; color: #237adb;background: #f4f4f4; border: 1px solid #cccccc;text-align: left;margin-right: 2px;}
+.input2 { font-size: 12px; color: #3c3c3c; width:125px; height:20px; background-color:#ffffff; border: 1px solid #7991af;text-align: left;}
+.input3 { font-size: 12px; color: #237adb;background: #f4f4f4; border: 1px solid #79A4CE;text-align: left;margin-right: 2px; width:100px;}
+.input4 { font-size: 12px; color: #237adb;background: #f4f4f4; border: 1px solid #79A4CE;text-align: left;margin-right: 2px; width:300px;}
+.input5 { font-size: 12px; border: 0px solid #79A4CE;text-align: left;margin-right: 2px; width:50px; text-align:center;}
+.input6 { font-size: 12px; color: #3c3c3c;background: #fff; height: 18px;border: 1px solid #c6c6c6;text-align: left; width:130px;}
+
+/* codmst modal */
+.CODMST_Modal{
+	z-index: 9999;
+}
+
