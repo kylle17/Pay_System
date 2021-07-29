@@ -1,20 +1,33 @@
 @charset "UTF-8";
 
-        footer{
-            border-top:1px solid gray;
-            padding:20px;
-            text-align: center;
-            display:flex;
-            flex-direction: column;
-        }
-        footer ul{
-        	display:flex;
-        	font-size: 8px;
-        }
-        footer div{
-        	font-size: 8px;
-        }
-        .content{
-            display:flex;
-           	justify-content: space-between;	            
-        }
+
+    footer{
+    	width: 100%;
+        border-top:1px solid gray;
+        padding:10px;
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+    }
+    
+
+	#footer_top{
+		width: 100%;
+		display:flex;
+		margin-bottom: 10px;
+	}
+	
+	
+	#footer_top a{
+		width: 200%;
+	}
+	
+	
+	#footer_bottom{
+	   	width: 100%;
+    	font-size: 8px;
+    	text-align: center;
+	}
+    
+    
+    

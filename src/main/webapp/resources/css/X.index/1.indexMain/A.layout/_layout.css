@@ -67,6 +67,8 @@
             display:flex;
   			/* border속성은 태그의 테두리를 표시한다.*/
   			border: 1px solid black;
+  			/**/
+  			height: 690px;
   		}
 
   		

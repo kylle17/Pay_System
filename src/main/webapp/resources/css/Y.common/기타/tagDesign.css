@@ -3,9 +3,22 @@
 
 
 
+/* 제목 */
+.title{
+	width:200px;
+	border: 0.1rem solid #555;
+	background-color: #64707F;
+	color: white;
+	font-size: 20px;
+	font-weight:bold;
+	text-align: center;
+	padding: 5px 5px 5px 5px; 
+	margin: 10px 10px 10px 10px; 	
+}
+
 
 /*소제목*/
-.smallTitle{
+.small_title{
 	border: 0.1rem solid #555;
 	color: white;
 	background-color: #64707F;
@@ -13,6 +26,19 @@
 	padding: 5px 15px 5px 15px;
 	margin: 0px 0px 0px 0px; 
 }
+
+
+/*그리드 제목*/
+.grid_title{
+	width: 100%;
+	border: 0.1rem solid #555;
+	color: white;
+	background-color: #64707F;
+	font-size: 15px;
+	padding: 5px 15px 5px 15px;
+	margin: 0px 0px 0px 0px; 
+}
+
 
 /*조회조건*/
 .condition{
@@ -33,3 +59,19 @@
 	height: 100%;
 	font-size: 16px;
 }
+
+
+/* jqxWidget */
+#jqxWidget{
+	flex: 1; 
+	/*border: 1px solid #64707F;*/ 
+}
+
+
+
+
+
+
+
+
+
